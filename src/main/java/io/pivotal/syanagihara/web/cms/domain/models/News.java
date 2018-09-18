@@ -1,13 +1,23 @@
 package io.pivotal.syanagihara.web.cms.domain.models;
 
 import lombok.Data;
+import org.hibernate.annotations.GenericGenerator;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import java.util.HashSet;
 import java.util.Set;
 
 @Data
+@Entity
+@Table(name = "news")
 public class News {
 
+    @Id
+    @GeneratedValue(generator = "system-uuid")
+    @GenericGenerator(name = "system-uuid", strategy = "uuid2")
     String id;
     String title;
     String content;
