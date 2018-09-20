@@ -1,8 +1,8 @@
 package io.pivotal.syanagihara.web.cms.domain.repository;
 
 import io.pivotal.syanagihara.web.cms.domain.models.User;
-import org.springframework.stereotype.Service;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-@Service
-public class UserRepository extends AbstractRepository<User> {
+public interface UserRepository extends JpaRepository<User, String> {
+
 }

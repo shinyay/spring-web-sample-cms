@@ -6,7 +6,6 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Service
 public interface CategoryRepository extends JpaRepository<Category, String> {
 
     List<Category> findByName(String name);
