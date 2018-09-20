@@ -1,7 +1,7 @@
 package io.pivotal.syanagihara.web.cms.domain.resources;
 
 import io.pivotal.syanagihara.web.cms.domain.models.User;
-import io.pivotal.syanagihara.web.cms.domain.vo.UserRequest;
+import io.pivotal.syanagihara.web.cms.domain.vo.NewsRequest;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -13,18 +13,18 @@ import java.util.List;
 @RequestMapping("/api/user")
 public class UserResource {
 
-    @GetMapping("/{id}")
+    @GetMapping(value = "/{id}")
     public ResponseEntity<User> findOne(@PathVariable("id") String id){
         return ResponseEntity.ok(new User());
     }
 
     @GetMapping
     public ResponseEntity<List<User>> findAll(){
-        return ResponseEntity.ok(Arrays.asList(new User(), new User()));
+        return ResponseEntity.ok(Arrays.asList(new User(),new User()));
     }
 
     @PostMapping
-    public ResponseEntity<User> newUser(UserRequest userRequest){
+    public ResponseEntity<User> newUser(NewsRequest news){
         return new ResponseEntity<>(new User(), HttpStatus.CREATED);
     }
 
@@ -34,7 +34,8 @@ public class UserResource {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<User> updateUser(@PathVariable("id") String id,User userRequest) {
+    public ResponseEntity<User> updateUser(@PathVariable("id") String id,NewsRequest news){
         return new ResponseEntity<>(new User(), HttpStatus.OK);
     }
+
 }
