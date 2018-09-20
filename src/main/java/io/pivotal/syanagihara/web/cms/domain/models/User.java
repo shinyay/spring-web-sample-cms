@@ -14,10 +14,14 @@ import javax.persistence.Table;
 public class User {
 
     @Id
-    @GeneratedValue(generator = "system=-uuid")
-    @GenericGenerator(name = "system-uuid", strategy = "uuid2")
+    @GeneratedValue(generator = "system-uuid")
+    @GenericGenerator(name = "system-uuid", strategy = "uuid")
     String id;
+
     String identity;
+
     String name;
+
     Role role;
+
 }

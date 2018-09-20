@@ -17,5 +17,6 @@ public class Category {
     @GeneratedValue(generator = "system-uuid")
     @GenericGenerator(name = "system-uuid", strategy = "uuid2")
     String id;
+
     String name;
 }
