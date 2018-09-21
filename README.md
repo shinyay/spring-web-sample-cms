@@ -15,3 +15,9 @@ docker network create cms-application
 docker run -d --name mongodb --net cms-application -p 27017:27017 mongo:3.4
 docker run -d --link mongodb:mongo --net cms-application -p 8081:8081 mongo-express
 ```
+
+### CMS Application
+```
+docker pull shinyay/cms
+docker run -d --name cms --link mongodb:mongodb --net cms-application -p 8080:8080 shinyay/cms
+```
