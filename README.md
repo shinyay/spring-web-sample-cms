@@ -13,4 +13,5 @@ docker run -d --name postgres --net cms-application -p 5432:5432 -e POSTGRES_PAS
 docker pull postgres:9.6-alpine
 docker network create cms-application
 docker run -d --name mongodb --net cms-application -p 27017:27017 mongo:3.4
+docker run -d --link mongodb:mongo --net cms-application -p 8081:8081 mongo-express
 ```
