@@ -2,5 +2,5 @@ spring:
   data:
     mongodb:
       database: cms
-      host: mongodb # localhost ,in the case of localhost
+      host: localhost # localhost(in the case of localhost) / mongodb(in the case of docker)
       port: 27017

@@ -73,30 +73,6 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
-			<plugin>
-				<groupId>com.google.cloud.tools</groupId>
-				<artifactId>jib-maven-plugin</artifactId>
-				<version>0.9.10</version>
-				<configuration>
-					<container>
-						<useCurrentTimestamp>true</useCurrentTimestamp>
-						<mainClass>io.pivotal.syanagihara.web.cms.CmsApplication</mainClass>
-						<ports>
-							<port>8080/tcp</port>
-						</ports>
-					</container>
-					<from>
-						<image>adoptopenjdk/openjdk8:alpine-slim</image>
-					</from>
-					<to>
-						<image>shinyay/cms</image>
-						<auth>
-							<username>${env.REGISTRY_USERNAME}</username>
-							<password>${env.REGISTRY_PASSWORD}</password>
-						</auth>
-					</to>
-				</configuration>
-			</plugin>
 		</plugins>
 	</build>
 
