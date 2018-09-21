@@ -11,7 +11,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Arrays;
 import java.util.List;
 
 @RestController
@@ -75,16 +74,6 @@ public class CategoryResource {
     })
     public ResponseEntity<Category> updateCategory(@PathVariable("id") String id,CategoryRequest category){
         return new ResponseEntity<>(new Category(), HttpStatus.OK);
-    }
-
-    @GetMapping("/query")
-    @ApiOperation(value = "List categories by name with starting",notes = "List categories by name with starting")
-    @ApiResponses(value = {
-            @ApiResponse(code = 200,message = "Categories found"),
-            @ApiResponse(code = 404,message = "Category not found")
-    })
-    public ResponseEntity<List<Category>> findByNameStartingWith(@RequestParam("name") String name){
-        return ResponseEntity.ok(this.categoryService.findByNameStartingWith(name));
     }
 
 }
