@@ -21,3 +21,10 @@ docker run -d --link mongodb:mongo --net cms-application -p 8081:8081 mongo-expr
 docker pull shinyay/cms
 docker run -d --name cms --link mongodb:mongodb --net cms-application -p 8080:8080 shinyay/cms
 ```
+## Jib - Containerize your Maven project
+
+Build Docker image
+
+```
+$ mvn compile jib:build
+```
